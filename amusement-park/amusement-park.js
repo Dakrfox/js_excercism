@@ -1,16 +1,19 @@
 /// <reference path="./global.d.ts" />
+
+
+
 // @ts-check
 //prueba 
 /**
  * Creates a new visitor.
  *
- * @param {string} name
- * @param {number} age
- * @param {string} ticketId
+ * @param {string} visitor_name
+ * @param {number} visitor_age
+ * @param {string} visitor_ticketId
  * @returns {Visitor} the visitor that was created
  */
-export function createVisitor(name, age, ticketId) {
-  throw new Error('Please implement the createVisitor function.');
+export function createVisitor(visitor_name, visitor_age, visitor_ticketId) {
+  return { name: visitor_name, age: visitor_age, ticketId: visitor_ticketId }
 }
 
 /**
@@ -20,7 +23,9 @@ export function createVisitor(name, age, ticketId) {
  * @returns {Visitor} the visitor without a ticket
  */
 export function revokeTicket(visitor) {
-  throw new Error('Please implement the revokeTicket function.');
+  let obj = visitor;
+  obj.ticketId = null;
+  return obj;
 }
 
 /**
@@ -31,7 +36,15 @@ export function revokeTicket(visitor) {
  * @returns {string} ticket status
  */
 export function ticketStatus(tickets, ticketId) {
-  throw new Error('Please implement the ticketStatus function.');
+
+  if(!(ticketId in tickets)) return 'unknown ticket id';
+
+  if(tickets[ticketId] === null){
+    return 'not sold';
+  }
+  else {
+    return  `sold to ${tickets[ticketId]}`;
+  }
 }
 
 /**
@@ -43,7 +56,8 @@ export function ticketStatus(tickets, ticketId) {
  * @returns {string} ticket status
  */
 export function simpleTicketStatus(tickets, ticketId) {
-  throw new Error('Please implement the simpleTicketStatus function.');
+  return (ticketId in tickets && tickets[ticketId]!=null)? `${tickets[ticketId]}`:'invalid ticket !!!';
+  
 }
 
 /**
@@ -53,5 +67,5 @@ export function simpleTicketStatus(tickets, ticketId) {
  * @returns {string | undefined} version
  */
 export function gtcVersion(visitor) {
-  throw new Error('Please implement the gtcVersion function.');
+  return (visitor.gtc ===undefined)? undefined: visitor.gtc['version'];
 }
