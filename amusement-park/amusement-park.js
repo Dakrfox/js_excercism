@@ -23,9 +23,11 @@ export function createVisitor(visitor_name, visitor_age, visitor_ticketId) {
  * @returns {Visitor} the visitor without a ticket
  */
 export function revokeTicket(visitor) {
-  let obj = visitor;
+  /*let obj = visitor;
   obj.ticketId = null;
-  return obj;
+  return obj;*/
+  visitor.ticketId=null;
+  return visitor
 }
 
 /**
@@ -67,5 +69,6 @@ export function simpleTicketStatus(tickets, ticketId) {
  * @returns {string | undefined} version
  */
 export function gtcVersion(visitor) {
-  return (visitor.gtc ===undefined)? undefined: visitor.gtc['version'];
+  //return (visitor.gtc ===undefined)? undefined: visitor.gtc['version'];
+  return visitor.gtc?.version;
 }
