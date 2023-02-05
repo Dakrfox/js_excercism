@@ -54,7 +54,9 @@ export function swapTopTwoCards(deck) {
  */
 export function discardTopCard(deck) {
   let discarded = deck.splice(1, deck.length-1);
+  // @ts-ignore
   deck.push(discarded);
+  // @ts-ignore
   return deck;
 }
 
