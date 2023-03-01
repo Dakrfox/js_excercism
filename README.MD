@@ -1,4 +1,4 @@
-#Excercism JavaScript Solutions
+# Excercism JavaScript Solutions
 This repository contains my solutions for various tracks on Exercism.io in the JavaScript programming language.
 
 ##Project Structure
