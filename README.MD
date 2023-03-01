@@ -5,7 +5,7 @@ This repository contains my solutions for various tracks on Exercism.io in the J
 * The root directory contains this README file and a list of all the tracks I've worked on.
 * Each track is organized into a separate directory, which contains a README with a brief description of the track and a list of the exercises that I've completed.
 * Each exercise has its own directory, which contains a README with a description of the problem and a list of the files that I've created to solve the problem.
-##Getting Started
+## Getting Started
 If you'd like to use these exercises to improve your own JavaScript skills, you can follow these steps to get started:
 
 1. Clone this repository to your local machine.
